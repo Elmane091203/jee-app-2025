@@ -39,7 +39,7 @@ Application JEE moderne pour la gestion des produits utilisant JPA/Hibernate au 
 
 - Java 11 ou supérieur
 - Apache Tomcat 9+
-- MySQL 8.0+
+- PostgreSQL 15+
 - Maven 3.6+
 
 ## 🚀 Installation et déploiement
@@ -52,25 +52,12 @@ cd jee-app-2025
 
 ### 2. Configuration de la base de données
 
-1. Créer la base de données MySQL :
+1. Créer la base de données PostgreSQL :
 \`\`\`sql
 CREATE DATABASE jee_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 \`\`\`
 
-2. Exécuter les scripts SQL fournis :
-   - `scripts/create-database.sql` : Création des tables
-   - `scripts/seed-data.sql` : Données de test
-
-### 3. Configuration JPA
-
-Modifier le fichier `src/main/resources/META-INF/persistence.xml` :
-\`\`\`xml
-<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jee_db"/>
-<property name="javax.persistence.jdbc.user" value="votre_utilisateur"/>
-<property name="javax.persistence.jdbc.password" value="votre_mot_de_passe"/>
-\`\`\`
-
-### 4. Compilation et déploiement
+### 3. Compilation et déploiement
 
 \`\`\`bash
 # Compilation
@@ -134,47 +121,3 @@ jee-app-2025/
 └── README.md
 \`\`\`
 
-## 🔧 Configuration avancée
-
-### Pool de connexions C3P0
-Le projet utilise C3P0 pour la gestion du pool de connexions :
-- Minimum : 5 connexions
-- Maximum : 20 connexions
-- Timeout : 300 secondes
-
-### Hibernate
-Configuration dans `persistence.xml` :
-- Dialecte MySQL 8
-- Mise à jour automatique du schéma
-- Affichage des requêtes SQL (développement)
-
-## 🐛 Dépannage
-
-### Erreurs courantes
-
-1. **Erreur de connexion à la base de données**
-   - Vérifier les paramètres dans `persistence.xml`
-   - S'assurer que MySQL est démarré
-   - Vérifier les droits utilisateur
-
-2. **ClassNotFoundException**
-   - Vérifier que toutes les dépendances Maven sont téléchargées
-   - Nettoyer et recompiler : `mvn clean compile`
-
-3. **Erreur 404**
-   - Vérifier que l'application est bien déployée
-   - Contrôler l'URL d'accès
-
-## 📈 Améliorations possibles
-
-- [ ] Pagination des résultats
-- [ ] Validation côté serveur renforcée
-- [ ] Gestion des erreurs plus fine
-- [ ] Tests unitaires et d'intégration
-- [ ] API REST
-- [ ] Authentification et autorisation
-- [ ] Logs applicatifs détaillés
-
-## 📄 Licence
-
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
