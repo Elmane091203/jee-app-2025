@@ -32,34 +32,11 @@ cd wildfly-27.0.1.Final/bin
 mvn clean package wildfly:deploy
 \`\`\`
 
-### GlassFish
-\`\`\`bash
-# Démarrer GlassFish
-asadmin start-domain
-
-# Déployer
-asadmin deploy target/jee-app-2025.war
-\`\`\`
-
-### TomEE (Tomcat + EJB)
-\`\`\`bash
-# Télécharger TomEE Plus
-wget https://archive.apache.org/dist/tomee/tomee-8.0.14/apache-tomee-8.0.14-plus.zip
-unzip apache-tomee-8.0.14-plus.zip
-
-# Démarrer TomEE
-cd apache-tomee-8.0.14-plus/bin
-./catalina.sh run
-
-# Copier le WAR dans webapps/
-cp target/jee-app-2025.war apache-tomee-8.0.14-plus/webapps/
-\`\`\`
-
 ## 📋 Configuration requise
 
 1. **Java 11+**
-2. **Serveur d'application JEE** (WildFly, GlassFish, TomEE)
-3. **MySQL 8.0+**
+2. **Serveur d'application JEE** (WildFly)
+3. **PostgreSQL+**
 4. **Maven 3.6+**
 
 ## 🔧 Avantages des EJB
@@ -95,11 +72,3 @@ cp target/jee-app-2025.war apache-tomee-8.0.14-plus/webapps/
 - Vérifier les annotations `@TransactionAttribute`
 - S'assurer que la base de données supporte les transactions
 - Contrôler la configuration JPA
-
-## 📈 Prochaines étapes
-
-- [ ] Sécurité avec `@RolesAllowed`
-- [ ] EJB Timer pour les tâches planifiées
-- [ ] Message-Driven Beans (MDB)
-- [ ] Remote EJB pour les clients distants
-- [ ] Clustering et haute disponibilité
