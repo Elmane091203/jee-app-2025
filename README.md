@@ -31,7 +31,7 @@ Application JEE moderne pour la gestion des produits utilisant JPA/Hibernate au 
 
 - **Java EE** : Servlets, JSP, JSTL
 - **JPA/Hibernate** : Persistance des données
-- **MySQL** : Base de données
+- **PostegreSQL** : Base de données
 - **Bootstrap 5** : Framework CSS
 - **Maven** : Gestion des dépendances
 
