@@ -1,0 +1,8 @@
+dao\IProduitDao.class
+ejb\ProduitServiceBean.class
+ejb\StatistiqueServiceBean.class
+ejb\IStatistiqueService.class
+entities\Produit.class
+web\ProduitServlet.class
+ejb\IProduitService.class
+dao\ProduitDaoImpl.class
